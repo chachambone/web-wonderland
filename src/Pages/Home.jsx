@@ -183,7 +183,7 @@ const Home = () => {
                 <p className="text-base md:text-lg text-gray-400 max-w-xl leading-relaxed font-light"
                   data-aos="fade-up"
                   data-aos-delay="1000">
-                  A Full-Stack Software Engineer passionate about building modern, responsive, and scalable web applications with React, JavaScript, Python, and Flask.
+                   A Full-Stack Software Engineer passionate about designing and developing modern, responsive, and scalable web applications. Skilled in React, JavaScript, Python, and Flask, with a strong eye for user experience and intuitive interface design.
                 </p>
 
                 {/* Tech Stack */}
