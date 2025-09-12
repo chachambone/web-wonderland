@@ -49,7 +49,7 @@ const ProjectDetails = () => {
       },
       {
         id: 3,
-        title: "Portfolio Website (V5)",
+        title: "Portfolio Website",
         description:
           "My official interactive portfolio featuring smooth animations, black & gold theme, and project showcase.",
         image: "/images/portfolio-v5.png",
@@ -62,7 +62,7 @@ const ProjectDetails = () => {
           "Project showcase with stats",
         ],
         demoLink: "https://marycharity.vercel.app",
-        githubLink: "https://github.com/chachambone/Portofolio_V5",
+        githubLink: "https://github.com/chachambone/web-wonderland.git",
       },
     ];
 
