@@ -1,8 +1,6 @@
 // FullWidthTabs.jsx
 import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
 import { useTheme } from "@mui/material/styles";
 import AppBar from "@mui/material/AppBar";
 import Tabs from "@mui/material/Tabs";
@@ -38,6 +36,7 @@ function useCounter(target, duration = 2000) {
   return count;
 }
 
+// Toggle Button
 const ToggleButton = ({ onClick, isShowingMore }) => (
   <button
     onClick={onClick}
@@ -73,6 +72,7 @@ const ToggleButton = ({ onClick, isShowingMore }) => (
   </button>
 );
 
+// TabPanel
 function TabPanel({ children, value, index, ...other }) {
   return (
     <div
@@ -165,11 +165,19 @@ const techStacks = [
   { icon: "flask-svgrepo-com.svg", language: "Flask" },
 ];
 
+// ✅ Happy Clients
+const happyClients = [
+  { name: "Robbinson Ngecu", contact: "ngecu16@.com", type: "email" },
+  { name: "June Mutheu", contact: "junemutheu@gmail.com", type: "email" },
+  { name: "KFC Mtaani", contact: "+254707583092", type: "phone" },
+];
+
 export default function FullWidthTabs() {
   const theme = useTheme();
   const [value, setValue] = useState(0);
   const [projects] = useState(myProjects);
   const [showAllProjects, setShowAllProjects] = useState(false);
+  const happyClientsCount = useCounter(happyClients.length);
 
   const isMobile = window.innerWidth < 768;
   const initialItems = isMobile ? 4 : 6;
@@ -206,102 +214,75 @@ export default function FullWidthTabs() {
           </Tabs>
         </AppBar>
 
-        {/* ✅ Swiper replacing SwipeableViews */}
-        <Swiper
-          spaceBetween={30}
-          slidesPerView={1}
-          onSlideChange={(swiper) => setValue(swiper.activeIndex)}
-          initialSlide={value}
-        >
-          {/* Projects */}
-          <SwiperSlide>
-            <TabPanel value={value} index={0} dir={theme.direction}>
-              <div className="grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3 gap-5">
-                {displayedProjects.map((project, index) => (
-                  <div
-                    key={project.id || index}
-                    data-aos={index % 3 === 0 ? "fade-up-right" : index % 3 === 1 ? "fade-up" : "fade-up-left"}
-                    data-aos-duration="1000"
+        {/* Projects Tab */}
+        <TabPanel value={value} index={0} dir={theme.direction}>
+          <div className="grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3 gap-5">
+            {displayedProjects.map((project, index) => (
+              <div
+                key={project.id || index}
+                data-aos={index % 3 === 0 ? "fade-up-right" : index % 3 === 1 ? "fade-up" : "fade-up-left"}
+                data-aos-duration="1000"
+              >
+                <CardProject
+                  Img={project.Img}
+                  Title={project.Title}
+                  Description={project.Description}
+                  Link={project.Link}
+                  id={project.id}
+                />
+              </div>
+            ))}
+          </div>
+          {projects.length > initialItems && (
+            <div className="mt-6 w-full flex justify-start">
+              <ToggleButton onClick={() => setShowAllProjects(!showAllProjects)} isShowingMore={showAllProjects} />
+            </div>
+          )}
+        </TabPanel>
+
+        {/* Happy Clients Tab */}
+        <TabPanel value={value} index={1} dir={theme.direction}>
+          <div className="text-center mb-8" data-aos="fade-up" data-aos-duration="1000">
+            <h2 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-[#6366f1] to-[#a855f7] text-transparent bg-clip-text drop-shadow-lg">
+              Trusted by <span className="text-white">{happyClientsCount}+</span> Happy Clients
+            </h2>
+            <p className="text-gray-400 text-sm md:text-base mt-2">
+              A few amazing people and businesses I’ve had the honor to work with.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6" data-aos="fade-up" data-aos-duration="1200">
+            {happyClients.map((client, index) => {
+              const href = client.type === "email" ? `mailto:${client.contact}` : `tel:${client.contact.replace(/\s+/g, "")}`;
+              return (
+                <div
+                  key={index}
+                  className="p-6 bg-white/5 rounded-xl border border-white/10 hover:bg-white/10 transition-all duration-300"
+                  data-aos="zoom-in"
+                  data-aos-delay={index * 200}
+                >
+                  <h3 className="text-lg font-semibold text-white">{client.name}</h3>
+                  <a
+                    href={href}
+                    className="text-slate-300 hover:text-purple-400 transition-colors text-sm flex items-center gap-2 mt-1"
                   >
-                    <CardProject
-                      Img={project.Img}
-                      Title={project.Title}
-                      Description={project.Description}
-                      Link={project.Link}
-                      id={project.id}
-                    />
-                  </div>
-                ))}
-              </div>
-              {projects.length > initialItems && (
-                <div className="mt-6 w-full flex justify-start">
-                  <ToggleButton onClick={() => setShowAllProjects(!showAllProjects)} isShowingMore={showAllProjects} />
+                    {client.type === "email" ? <Mail className="w-4 h-4" /> : <Phone className="w-4 h-4" />}
+                    {client.contact}
+                  </a>
                 </div>
-              )}
-            </TabPanel>
-          </SwiperSlide>
+              );
+            })}
+          </div>
+        </TabPanel>
 
-          {/* Happy Clients */}
-          <SwiperSlide>
-            <TabPanel value={value} index={1} dir={theme.direction}>
-              <div className="text-center mb-8" data-aos="fade-up" data-aos-duration="1000">
-                <h2 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-[#6366f1] to-[#a855f7] text-transparent bg-clip-text drop-shadow-lg">
-                  Trusted by <span className="text-white">{useCounter(3)}+</span> Happy Clients
-                </h2>
-                <p className="text-gray-400 text-sm md:text-base mt-2">
-                  A few amazing people and businesses I’ve had the honor to work with.
-                </p>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6" data-aos="fade-up" data-aos-duration="1200">
-                {[
-                  { name: "Robbinson Ngecu", contact: "ngecu16@.com", type: "email" },
-                  { name: "June Mutheu", contact: "junemutheu@gmail.com", type: "email" },
-                  { name: "KFC Mtaani", contact: "+254707583092", type: "phone" },
-                ].map((client, index) => {
-                  const href =
-                    client.type === "email"
-                      ? `mailto:${client.contact}`
-                      : `tel:${client.contact.replace(/\s+/g, "")}`;
-
-                  return (
-                    <div
-                      key={index}
-                      className="p-6 bg-white/5 rounded-xl border border-white/10 
-                                hover:bg-white/10 transition-all duration-300"
-                      data-aos="zoom-in"
-                      data-aos-delay={index * 200}
-                    >
-                      <h3 className="text-lg font-semibold text-white">{client.name}</h3>
-                      <a
-                        href={href}
-                        className="text-slate-300 hover:text-purple-400 transition-colors text-sm flex items-center gap-2 mt-1"
-                      >
-                        {client.type === "email" ? (
-                          <Mail className="w-4 h-4" />
-                        ) : (
-                          <Phone className="w-4 h-4" />
-                        )}
-                        {client.contact}
-                      </a>
-                    </div>
-                  );
-                })}
-              </div>
-            </TabPanel>
-          </SwiperSlide>
-
-          {/* Tech Stack */}
-          <SwiperSlide>
-            <TabPanel value={value} index={2} dir={theme.direction}>
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-5">
-                {techStacks.map((stack, index) => (
-                  <TechStackIcon key={index} TechStackIcon={stack.icon} Language={stack.language} />
-                ))}
-              </div>
-            </TabPanel>
-          </SwiperSlide>
-        </Swiper>
+        {/* Tech Stack Tab */}
+        <TabPanel value={value} index={2} dir={theme.direction}>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-5">
+            {techStacks.map((stack, index) => (
+              <TechStackIcon key={index} TechStackIcon={stack.icon} Language={stack.language} />
+            ))}
+          </div>
+        </TabPanel>
       </Box>
     </div>
   );
