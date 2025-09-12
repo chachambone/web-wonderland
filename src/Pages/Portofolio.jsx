@@ -256,7 +256,7 @@ export default function FullWidthTabs() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6" data-aos="fade-up" data-aos-duration="1200">
                 {[
                   { name: "Robbinson Ngecu", contact: "ngecu16@.com", type: "email" },
-                  { name: "June Mutheu", contact: "+254725214381", type: "Phone" },
+                  { name: "June Mutheu", contact: "junemutheu@gmail.com", type: "email" },
                   { name: "KFC Mtaani", contact: "+254707583092", type: "phone" },
                 ].map((client, index) => {
                   const href =
