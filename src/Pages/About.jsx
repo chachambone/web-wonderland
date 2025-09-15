@@ -101,7 +101,7 @@ const AboutPage = () => {
     {
       icon: UserCheck,
       color: "from-[#a855f7] to-[#6366f1]",
-      value: Math.max(1, totalProjects - 1), // 👈 at least 1 happy client
+      value: Math.max(1, totalProjects + 1), // 👈 at least 1 happy client
       label: "Happy Clients",
       description: "Trusted partnerships built",
       animation: "fade-up",
