@@ -13,7 +13,7 @@ Let me introduce myself, I’m Marycharity Mbone. On this occasion, I’d like t
 - SweetAlert2  
 
 **Website Link:**  
-[https://https://web-wonderland-8p5q.vercel.app//](https://https://web-wonderland-8p5q.vercel.app//)  
+[https://marycharity-mbone.vercel.app/](https://marycharity-mbone.vercel.app/)  
 
 We would appreciate it if you decide to use this project. Please include credit when using it. Thank you! 🙏  
 
