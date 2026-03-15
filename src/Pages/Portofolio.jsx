@@ -11,7 +11,7 @@ import CardProject from "../components/CardProject";
 import TechStackIcon from "../components/TechStackIcon";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { Code, Smile, Boxes, Mail, Phone } from "lucide-react";
+import { Code, Smile, Boxes, Mail, Phone, Loader2 } from "lucide-react";
 
 // ✅ Counter Hook
 function useCounter(target, duration = 2000) {
@@ -175,7 +175,7 @@ const happyClients = [
 export default function FullWidthTabs() {
   const theme = useTheme();
   const [value, setValue] = useState(0);
-  const [projects] = useState(myProjects);
+  const [projects, setProjects] = useState(myProjects); // 👈 Initialize with myProjects directly
   const [showAllProjects, setShowAllProjects] = useState(false);
   const happyClientsCount = useCounter(happyClients.length);
 
@@ -184,6 +184,9 @@ export default function FullWidthTabs() {
 
   useEffect(() => {
     AOS.init({ once: false });
+    
+    // ✅ Save projects to localStorage for About page
+    localStorage.setItem("projects", JSON.stringify(myProjects));
   }, []);
 
   const displayedProjects = showAllProjects ? projects : projects.slice(0, initialItems);
@@ -247,7 +250,7 @@ export default function FullWidthTabs() {
               Trusted by <span className="text-white">{happyClientsCount}+</span> Happy Clients
             </h2>
             <p className="text-gray-400 text-sm md:text-base mt-2">
-              A few amazing people and businesses I’ve had the honor to work with.
+              A few amazing people and businesses I've had the honor to work with.
             </p>
           </div>
 
