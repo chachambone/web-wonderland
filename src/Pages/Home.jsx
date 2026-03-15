@@ -80,9 +80,7 @@ const PAUSE_DURATION = 2000;
 const WORDS = ["UI/UX Designer", "Full Stack Software Engineer"];
 const TECH_STACK = ["React", "Javascript", "Node.js", "Tailwind", "GCP"];
 const SOCIAL_LINKS = [
-  { icon: Github, link: "https://github.com/chachambone" },
-  { icon: Linkedin, link: "https://linkedin.com/in/marycharity-mbone-833636264" },
-  { icon: Instagram, link: "https://www.instagram.com/chachambone" }
+  { icon: Linkedin, link: "https://linkedin.com/in/marycharity-mbone-833636264" }
 ];
 
 const Home = () => {
