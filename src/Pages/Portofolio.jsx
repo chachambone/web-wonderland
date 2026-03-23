@@ -208,17 +208,48 @@ export default function FullWidthTabs() {
       </div>
 
       <Box sx={{ width: "100%" }}>
-        <AppBar position="static" elevation={0} sx={{ bgcolor: "transparent" }} className="md:px-4">
+        <AppBar
+          position="static"
+          elevation={0}
+          sx={{ bgcolor: "transparent" }}
+          className="md:px-4"
+        >
           <Tabs
             value={value}
             onChange={(_, newValue) => setValue(newValue)}
             textColor="secondary"
             indicatorColor="secondary"
             variant="fullWidth"
+            sx={{
+              "& .MuiTab-root": {
+                color: "#94a3b8",
+                fontWeight: 500,
+                fontSize: { xs: "0.75rem", sm: "0.875rem" },
+                textTransform: "none",
+              },
+              "& .MuiTab-root.Mui-selected": {
+                color: "#a855f7",
+              },
+              "& .MuiTabs-indicator": {
+                backgroundColor: "#a855f7",
+              },
+            }}
           >
-            <Tab icon={<Code className="mb-2 w-5 h-5" />} label="Projects" {...a11yProps(0)} />
-            <Tab icon={<Smile className="mb-2 w-5 h-5" />} label="Happy Clients" {...a11yProps(1)} />
-            <Tab icon={<Boxes className="mb-2 w-5 h-5" />} label="Tech Stack" {...a11yProps(2)} />
+            <Tab
+              icon={<Code className="mb-2 w-5 h-5" />}
+              label="Projects"
+              {...a11yProps(0)}
+            />
+            <Tab
+              icon={<Smile className="mb-2 w-5 h-5" />}
+              label="Happy Clients"
+              {...a11yProps(1)}
+            />
+            <Tab
+              icon={<Boxes className="mb-2 w-5 h-5" />}
+              label="Tech Stack"
+              {...a11yProps(2)}
+            />
           </Tabs>
         </AppBar>
 
