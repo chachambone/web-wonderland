@@ -103,46 +103,51 @@ function a11yProps(index) {
 const myProjects = [
   {
     id: "beauty-shop",
-    Title: "Beauty Shop",
-    Description:
-      "A full-stack e-commerce platform for beauty products with user & admin roles, JWT auth, product browsing, cart, checkout, and invoice generation.",
+    Title: "Beauty E-Commerce System",
+    Description: "A full e-commerce frontend with Google OAuth authentication for secure, one-click user login, responsive product listings, and protected routes.",
     Img: "/images/beauty-shop.png",
-    TechStack: ["React", "Redux Toolkit", "Flask", "PostgreSQL", "JWT", "TailwindCSS"],
+    TechStack: ["React", "Google OAuth", "TailwindCSS", "JavaScript"],
     Features: [
-      "User & Admin roles with JWT authentication",
-      "Product browsing and advanced filtering",
-      "Cart and secure checkout system",
-      "Invoice generation",
+      "Google OAuth authentication for one-click login",
+      "Responsive product listing UI",
+      "Protected routes and auth state management",
+      "Clean component-based architecture",
+      "Mobile-first responsive design",
     ],
     Link: "https://beauty-shop-opal.vercel.app/",
     Github: "Private",
   },
   {
-    id: "music-store",
-    Title: "Music Store App",
-    Description:
-      "Full-stack application for managing musical instruments, reservations, and feedback.",
-    Img: "/images/music-store.png",
-    TechStack: ["React", "Flask", "PostgreSQL", "JWT"],
+    id: "drink-and-chill",
+    Title: "Drink & Chill",
+    Description: "A drinks ordering platform with GPS/geolocation functionality for location-aware delivery and a smooth mobile-first checkout experience.",
+    Img: "/images/drink-and-chill.png",
+    TechStack: ["React", "Geolocation API", "TailwindCSS", "JavaScript"],
     Features: [
-      "User authentication & role-based access",
-      "Instrument catalog browsing",
-      "Reservation system",
-      "Admin inventory management",
+      "GPS/geolocation for location-aware delivery",
+      "Browser Geolocation API integration",
+      "Smooth user flow from browsing to checkout",
+      "Mobile-first responsive UI",
+      "UI/UX best practices throughout",
     ],
-    Link: "https://music-management-store.vercel.app/",
+    Link: "https://drink-and-chill-frontend-n1lj.vercel.app/",
     Github: "Private",
   },
   {
-    id: "property-manager-app",
-    Title: "Property Manager App",
-    Description:
-      "A property management platform to handle listings, tenants, and rental payments.",
-    Img: "/images/property-manager.png",
-    TechStack: ["React Native", "Expo", "Firebase"],
-    Features: ["Property listings", "Tenant management", "Rental tracking"],
-    Link: "",
-    Github: "https://github.com/chachambone/property-manager-app",
+    id: "chacha-street-eats",
+    Title: "Chacha Street Eats",
+    Description: "A personal entrepreneurial project — a street food ordering platform built from concept to deployment showcasing end-to-end frontend ownership.",
+    Img: "/images/chacha-street-eats.png",
+    TechStack: ["React", "TailwindCSS", "JavaScript", "Vite"],
+    Features: [
+      "End-to-end frontend ownership",
+      "Concept, UI design, development and deployment",
+      "Clean UX with fast load times",
+      "Mobile responsive design",
+      "Personal entrepreneurial project turned live product",
+    ],
+    Link: "https://chacha-street-eats.vercel.app/",
+    Github: "Private",
   },
 ];
 
@@ -189,7 +194,7 @@ export default function FullWidthTabs() {
     localStorage.setItem("projects", JSON.stringify(myProjects));
   }, []);
 
-  const displayedProjects = showAllProjects ? projects : projects.slice(0, initialItems);
+  const displayedProjects = showAllProjects ? projects : projects
 
   return (
     <div className="md:px-[10%] px-[5%] w-full sm:mt-0 mt-[3rem] bg-[#030014]" id="Portofolio">

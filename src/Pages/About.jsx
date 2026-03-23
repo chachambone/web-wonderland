@@ -133,7 +133,7 @@ const AboutPage = () => {
               Always eager to learn, grow, and contribute to impactful projects.
             </p>
             <div className="flex flex-col lg:flex-row items-center gap-4">
-              <a href="/software-engineer.pdf" className="w-full lg:w-auto">
+              <a href="/resume.pdf" className="w-full lg:w-auto">
                 <button className="w-full lg:w-auto sm:px-6 py-2 sm:py-3 rounded-lg bg-gradient-to-r from-[#6366f1] to-[#a855f7] text-white font-medium flex items-center justify-center gap-2 shadow-lg hover:scale-105">
                   <FileText className="w-4 h-4 sm:w-5 sm:h-5" /> Download CV
                 </button>
