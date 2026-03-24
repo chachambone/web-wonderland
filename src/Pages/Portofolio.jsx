@@ -133,6 +133,7 @@ const myProjects = [
     Link: "https://drink-and-chill-frontend-n1lj.vercel.app/",
     Github: "Private",
   },
+  
   {
     id: "chacha-street-eats",
     Title: "Chacha Street Eats",
@@ -149,6 +150,38 @@ const myProjects = [
     Link: "https://chacha-street-eats.vercel.app/",
     Github: "Private",
   },
+  // {
+  //   id: "chacha-street-eats",
+  //   Title: "Chacha Street Eats",
+  //   Description: "A personal entrepreneurial project — a street food ordering platform built from concept to deployment showcasing end-to-end frontend ownership.",
+  //   Img: "/images/chacha-street-eats.png",
+  //   TechStack: ["React", "TailwindCSS", "JavaScript", "Vite"],
+  //   Features: [
+  //     "End-to-end frontend ownership",
+  //     "Concept, UI design, development and deployment",
+  //     "Clean UX with fast load times",
+  //     "Mobile responsive design",
+  //     "Personal entrepreneurial project turned live product",
+  //   ],
+  //   Link: "https://chacha-street-eats.vercel.app/",
+  //   Github: "Private",
+  // },
+  // {
+  //   id: "chacha-street-eats",
+  //   Title: "Chacha Street Eats",
+  //   Description: "A personal entrepreneurial project — a street food ordering platform built from concept to deployment showcasing end-to-end frontend ownership.",
+  //   Img: "/images/chacha-street-eats.png",
+  //   TechStack: ["React", "TailwindCSS", "JavaScript", "Vite"],
+  //   Features: [
+  //     "End-to-end frontend ownership",
+  //     "Concept, UI design, development and deployment",
+  //     "Clean UX with fast load times",
+  //     "Mobile responsive design",
+  //     "Personal entrepreneurial project turned live product",
+  //   ],
+  //   Link: "https://chacha-street-eats.vercel.app/",
+  //   Github: "Private",
+  // },
 ];
 
 // ✅ Tech Stacks
