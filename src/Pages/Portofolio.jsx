@@ -172,9 +172,9 @@ const techStacks = [
 
 // ✅ Happy Clients
 const happyClients = [
-  { name: "Robbinson Ngecu", contact: "ngecu16@.com", type: "email" },
+  { name: "Jasiri Victors", contact: "vjasiri@gmail.com", type: "email" },
   { name: "June Mutheu", contact: "junemutheu@gmail.com", type: "email" },
-  { name: "KFC Mtaani", contact: "+254707583092", type: "phone" },
+  { name: "KFC Mtaani", contact: "0717084509", type: "phone" },
 ];
 
 export default function FullWidthTabs() {
